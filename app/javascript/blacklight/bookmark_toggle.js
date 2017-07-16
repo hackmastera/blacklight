@@ -1,5 +1,3 @@
-//= require blacklight/core
-//= require blacklight/checkbox_submit
 (function($) {
 //change form submit toggle to checkbox
     Blacklight.do_bookmark_toggle_behavior = function() {
@@ -13,11 +11,11 @@
          }
       });
     };
-    Blacklight.do_bookmark_toggle_behavior.selector = "form.bookmark-toggle"; 
+    Blacklight.do_bookmark_toggle_behavior.selector = "form.bookmark-toggle";
 
 Blacklight.onLoad(function() {
-  Blacklight.do_bookmark_toggle_behavior();  
+  Blacklight.do_bookmark_toggle_behavior();
 });
-  
+
 
 })(jQuery);

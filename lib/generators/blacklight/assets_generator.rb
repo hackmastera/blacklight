@@ -10,7 +10,20 @@ module Blacklight
 
       contents = "\n//\n// Required by Blacklight\n"
       contents += "//= require jquery\n" if rails_5_1?
+      contents += "//= require popper\n"
+      contents += "// Twitter Typeahead for autocomplete\n"
+      contents += "//= require twitter/typeahead\n"
+      contents += "//= require bootstrap\n"
+
+      # TODO: can we have the application use YARN/Webpacker and `yarn add blacklight-frontend`?
       contents += "//= require blacklight/blacklight\n"
+
+      # That should pull blacklight + bootstrap stuff into the bundle
+      # contents += "//= require bootstrap/util\n"
+      # contents += "//= require bootstrap/collapse\n"
+      # contents += "//= require bootstrap/dropdown\n"
+      # contents += "//= require bootstrap/alert\n"
+      # contents += "//= require bootstrap/modal\n"
 
       marker = if turbolinks?
                  '//= require turbolinks'

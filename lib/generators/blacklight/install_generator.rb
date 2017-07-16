@@ -38,6 +38,13 @@ module Blacklight
       generate solr_generator, generator_options
     end
 
+    # This could be skipped if you want to use webpacker
+    def add_javascript_dependencies
+      gem 'bootstrap', '>= 4.0.0.beta', "< 5"
+      gem 'popper_js'
+      gem 'twitter-typeahead-rails'
+    end
+
     def bundle_install
       Bundler.with_clean_env do
         run "bundle install"

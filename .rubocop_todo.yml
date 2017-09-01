@@ -267,9 +267,6 @@ Style/PredicateName:
     - 'app/models/concerns/blacklight/solr/document.rb'
     - 'lib/generators/blacklight/assets_generator.rb'
 
-Rails/ApplicationRecord:
-  Enabled: false
-
 Rails/Present:
   Enabled: false
 

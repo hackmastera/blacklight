@@ -15,6 +15,13 @@ module Blacklight
     delegate :blacklight_config, :content_tag, :safe_join, :render, to: :@view_context
     attr_reader :display_facet, :view_context
 
+    def as_json
+      { 'name' => display_facet.name,
+        'items' => display_facet.items.map { |item|
+                     facet_item_presenter.new(display_facet, item, view_context).as_json
+                   } }
+    end
+
     ##
     # Renders the list of values
     # removes any elements where render_facet_item returns a nil value. This enables an application

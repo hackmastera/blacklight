@@ -95,7 +95,6 @@ Blacklight.modal.triggerFormSelector  = "form[data-blacklight-modal~=trigger]";
 // be preserved. MUST be manually prefixed with the modal selector,
 // so they only apply to things inside a modal.
 Blacklight.modal.preserveLinkSelector = Blacklight.modal.modalSelector + ' a[data-blacklight-modal~=preserve]';
-Blacklight.modal.preserveFormSelector = Blacklight.modal.modalSelector + ' form[data-blacklight-modal~=preserve]'
 
 Blacklight.modal.containerSelector    = "[data-blacklight-modal~=container]";
 
@@ -171,9 +170,9 @@ Blacklight.modal.setup_modal = function() {
   // Register both trigger and preserve selectors in ONE event handler, combining
   // into one selector with a comma, so if something matches BOTH selectors, it
   // still only gets the event handler called once.
-  $("body").on("click", Blacklight.modal.triggerLinkSelector  + ", " + Blacklight.modal.preserveLinkSelector,
+  $("body").on("click", Blacklight.modal.triggerLinkSelector + ", " + Blacklight.modal.preserveLinkSelector,
     Blacklight.modal.modalAjaxLinkClick);
-  $("body").on("submit", Blacklight.modal.triggerFormSelector + ", " + Blacklight.modal.preserveFormSelector,
+  $("body").on("submit", Blacklight.modal.triggerFormSelector,
     Blacklight.modal.modalAjaxFormSubmit);
 
   // Catch our own custom loaded event to implement data-blacklight-modal=closed
